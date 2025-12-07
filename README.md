@@ -1,4 +1,4 @@
-# Stern-Berkely-AI-course-Capstone-Assignment-20_1
+# Stern-Berkeley-AI-course-Capstone-Assignment-20_1
 # Michael Stern Required Capstone Assignment 20.1: Initial Report and Exploratory Data Analysis (EDA)
 
 # 1. Purpose
@@ -13,19 +13,23 @@
 ### https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi%3A10.7910%2FDVN%2FJQGLHX&version=&q=&fileAccess=&fileTag=&fileSortField=&fileSortOrder=&tagPresort=true&folderPresort=true
 ### Note: the data are publicly available
 
-# 3. Feature Engineering
+Dataset n = 21788 with 93 features (columns)
 
-## Target is 'six_overall_rating' -- a rating for the performance of an foreign aid project (float with range from 1 to 6)
+# 3. Feature Engineering and Data Exploration
 
-## Deleted null values from 
-Target is six_overall_rating.  Delete all null values for six_overall_rating
-Explanatory variables for projects: project size, project duration, project sector 
-Explanatory variables for recipient countries: existence of an Access to Information process, presence of appeals mechanism; CSO participatory environment; corruption metric; 
-Explanatory variables for donors: the donor; whether the donor has an independent evaluation unit
-Recode Donor into dummies
-Combine project size into a single variable.  Then delete null values for this var
-Recode classification (recipient country lending classification) 
-Correlation heat maps
+## a. Feature Engineering
+### Target is 'six_overall_rating' -- a rating for the performance of an foreign aid project (float with range from 1 to 6; 6 is highest performance)
+### Deleted null values from target 
+### Dropped features containing lagged variables created by the authors of the paper cited above
+### Created dummy columns using the 'classification' feature (World Bank recipient country lending classification)
+### Dropped a set of features containing information that overlapped significantly with other features
+
+## b. Plots
+## Correlation heatmap showed no significant correlations of any non-categorical feature with the target.
+## Box plot suggests a small positive relationship between project performance and countries that have both a Freedom of Information (FOI) law and a mechanism to appeal a denied FOI request.
+## Project performance ratings skewed towards higher values (mean = 4.2)
+
+# 4. 
 Future analysis and feature engineering
 There are features which are not good candidates for the creation of binary/dummy variables because this would produce sparse matrices (e.g., wb_sector_board which has 26 distinct categories).  This suggests further analysis using classification models to see if certain features have predictive power for project performance (target).
 Principal Components Analysis to reduce dimensionality if appropriate
