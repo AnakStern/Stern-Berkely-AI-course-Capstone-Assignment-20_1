@@ -39,6 +39,3 @@ Dataset n = 21788 with 93 features (columns)
 ## c. Feature engineering or classification model to capture potential effects on the target associated with a project being funded by a certain donor (dataset has 12 distinct donors).  For example, do foreign aid projects funded by Japan tend to be associated with higher performance ratings? 
 ## d. Modeling to assess whether combinations of different features predict project performance (e.g., does a project with a longer duration from a particular donor in a country with a relatively high level of corruption control tend to have a better performance rating?)
 ## e. How to drop or account for null values without losing useful data (i.e., maintaining a larger n) 
-
-Coefficients on the baseline regression model were all at a small magnitude, indicating little predictive power.  This aligns with the correlation heatmap.
-
