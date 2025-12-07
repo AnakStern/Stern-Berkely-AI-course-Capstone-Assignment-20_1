@@ -5,7 +5,7 @@
 ## This analysis aims to use machine learning models to better understand what factors
 ## predict the success of foreign aid projects.
 
-#2. Data Source
+# 2. Data Source
 ## Data were used to conduct the analysis for the following scholarly journal article:
 ### Honig, Dan; Lall, Ranjit; Parks, Bradley, 2021, "Replication Data for: When Does Transparency Improve Institutional Performance? Evidence from 20,000 Projects in 183 Countries", https://doi.org/10.7910/DVN/JQGLHX, Harvard Dataverse, V1, UNF:6:hYiIgxQ0ejxl0wZLmeXZrQ== [fileUNF]
 
@@ -29,12 +29,16 @@ Dataset n = 21788 with 93 features (columns)
 ## Box plot suggests a small positive relationship between project performance and countries that have both a Freedom of Information (FOI) law and a mechanism to appeal a denied FOI request.
 ## Project performance ratings skewed towards higher values (mean = 4.2)
 
-# 4. 
-Future analysis and feature engineering
-There are features which are not good candidates for the creation of binary/dummy variables because this would produce sparse matrices (e.g., wb_sector_board which has 26 distinct categories).  This suggests further analysis using classification models to see if certain features have predictive power for project performance (target).
-Principal Components Analysis to reduce dimensionality if appropriate
-Feature engineering or classification model to capture potential effects on the target associated with a project being funded by a certain donor (dataset has 12 distinct donors).
-Modeling to assess whether combinations of different features predict project performance (e.g., does a project with a longer duration from a particular donor in a country with a relatively high level of corruption control tend to have a better performance rating?)
-How to drop null values without losing useful data (i.e., maintaining a larger n) 
+# 4. Basline Model
+## Ran a linear regression using numeric features other than those which represent a non-ordinal category
+## Key finding: all regression coefficients were small, suggesting none of the features predicts the target strongly. 
+
+# 5. Considerations for Future analysis and Feature Engineering
+## a. There are features which are not good candidates for the creation of binary/dummy variables because this would produce sparse matrices (e.g., wb_sector_board which has 26 distinct categories).  This suggests further analysis using classification models to see if certain features have predictive power for project performance (target).
+## b. Principal Components Analysis to reduce dimensionality if appropriate
+## c. Feature engineering or classification model to capture potential effects on the target associated with a project being funded by a certain donor (dataset has 12 distinct donors).  For example, do foreign aid projects funded by Japan tend to be associated with higher performance ratings? 
+## d. Modeling to assess whether combinations of different features predict project performance (e.g., does a project with a longer duration from a particular donor in a country with a relatively high level of corruption control tend to have a better performance rating?)
+## e. How to drop or account for null values without losing useful data (i.e., maintaining a larger n) 
+
 Coefficients on the baseline regression model were all at a small magnitude, indicating little predictive power.  This aligns with the correlation heatmap.
 
